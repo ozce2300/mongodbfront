@@ -1,0 +1,286 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "h" "m" "f";
+}
+
+header {
+    grid-area: h;
+    display: flex;
+    height: 80px;
+    background-color: aqua;
+    margin: 0;
+    position: relative;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#main-container {
+    margin: 10vh 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20PX;
+}
+
+.articleId {
+    border: 2px greenyellow solid;
+    padding: 5%;
+    max-width: 500px;
+    margin-bottom: 30px;
+
+
+}
+
+p{
+    line-height: 20px;
+}
+
+#ul-main {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid green;
+    padding: 1em;
+}
+
+#ul-main li {
+    margin-bottom: 10px;
+}
+
+#ul-main li strong {
+    display: inline-block;
+    width: 100px; /* justera bredden efter behov */
+}
+
+
+main {
+    grid-area: m;
+    font-size: 1em;
+}
+
+input, select{
+    padding: 10px;
+}
+
+#submit {
+    margin-top: 10px;
+    background-color: green;
+    border-radius: 8px;
+    color: white;
+}
+
+.radera {
+    margin-top: 10px;
+    background-color: red;
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+#submit:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+#radera:hover {
+    background-color: rgb(182, 57, 57);
+    cursor: pointer;
+}
+
+
+#container-form {
+    margin-top:30px;
+    display: flex;
+    max-width: 800px;
+}
+
+#container-error {
+    margin-top:30px;
+    display: flex;
+    max-width: 800px;
+    justify-content: space-around;
+    color: red;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    margin:0 auto;
+    width: 80%;
+    flex-direction: column;
+}
+
+
+.logo a {
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Design av meny för mobilenheter, placeras till höger om skärmen */
+nav {
+    background-color: aqua;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.71);
+    font-size: 1.4em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.8em 0;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1em;
+}
+
+nav li:hover {
+    background-color:rgb(23, 117, 117);
+    cursor: pointer;
+}
+
+/* Meny knapp, öppna meny */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color:aqua;
+    border: white solid 2px;
+    cursor: pointer;
+}
+
+.open {
+    margin: 0 1em;
+}
+
+.menu-btn:hover {
+    background-color: rgb(21, 147, 147);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.421);
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+/* de tre svarta strecken (hamburg-icon) */
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.menu-text {
+    font-size: 1.2em;
+    color: white;
+}
+
+/* Meny knapp, stäng */
+.close {
+    margin: 1em 1.5em;
+    padding: 10px 15px;
+
+}
+
+/* Roterar två lodräda streck, till ett kryss */
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+h2 {
+    margin: 1em 0;
+}
+
+main p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+
+/* Media querys */
+
+/* Större skärmas - gör menyn som inline */
+@media only screen and (min-width: 992px) {
+    header {
+        padding: 0 3em;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #open-menu {
+        display: none !important;
+    }
+
+    header {
+        position: static;
+    }
+
+    nav {
+        display: block !important;
+        position: static;
+        box-shadow: 0 0px 0px;
+        height: auto;
+        font-size: 1.4em;
+        width: auto;
+    }
+
+    nav ul {
+        height: 100%;
+    }
+
+    nav li {
+        display: inline;
+        padding: 1.2em 0;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1 class="logo"><a href="index.html">Rest</a></h1>
+            <!-- Meny knapp för att öppna mobilmenyn-->
+            <button class="menu-btn open" id="open-menu">
+                <span class="menu-icon">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </span>
+                <span class="menu-text">Meny</span>
+            </button>
+            <!-- navigering -->
+            <nav id="nav-menu">
+                <!-- Knapp som visas om mobilmenyn är utfälld -->
+                <button class="menu-btn close" id="close-menu">
+                    <span class="menu-icon">
+                        <span class="bars cross1"></span>
+                        <span class="bars cross2"></span>
+                    </span>
+                    <span class="menu-text">Stäng</span>
+                </button>
+                <ul>
+                    <li><a href="/">Hem</a></li>
+                    <li><a href="add.html">Add</a></li>
+                    <li><a href="om.html">Om</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <div id="om">
+                <h2>
+                    Om
+                </h2>
+
+                <p>
+                    Detta är en sida där man kan skriva in sitt cv, som sedan skickas till databasen och sparas, samt 
+                    visas i index.html där vi fetchar apiet vi sparat.
+                    Syftet med uppgiften är att
+                    jag skall bekanta med begreppet webbtjänster och förstå hur jag kan
+                    använda dessa för att skapa moderna och plattformsoberoende applikationer.
+                    Att lära mig skapa en REST-baserad webbtjänst som använder en relationsbaserad databasserver för lagring.
+                    Att lära mig använda Fetch API för att konsumera en webbtjänst.
+
+                    Intressant uppgift, ju mer jag lär mig om backend desto mer fastnar jag. Väldigt häftigt att se och även
+                    drömma om vad man kan åstadkomma med detta i framtiden. Redan nu har jag olika tankar och funderingar
+                    på vad jag vill göra med det jag lärt mig. En lärorik uppgift!
+
+                    Jag använde mig av PostgreSQL och la upp servern i render.com
+
+                </p>
+
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
