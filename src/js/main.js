@@ -40,7 +40,7 @@ async function getData() {
         <strong>Jobbtitel:</strong> ${element.jobtitle}<br> 
         <strong>Plats: </strong>${element.location}<br>
         <strong>Beskrivning av arbetet:</strong> <br>${element.description}<br> </p>
-        <button type="button" class="radera" data-id="${element.id}">Radera</button>`;
+        <button type="button" class="radera" data-id="${element._id}">Radera</button>`;
 
         const deleteButton = article.querySelector('.radera');
         deleteButton.addEventListener('click', function() {
@@ -52,8 +52,10 @@ async function getData() {
     });
 }
 
-async function deleteCv(id) {
-    const response = await fetch(`${url}${id}`, {
+async function deleteCv(_id) {
+    console.log("CV ID att radera:", _id); // Lägg till denna rad för att logga ID:t
+
+    const response = await fetch(`${url}/${_id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -62,7 +64,7 @@ async function deleteCv(id) {
 
     if (response.ok) {
         // Ta bort det aktuella CV-postelementet från DOM:en
-        const article = document.querySelector(`[data-id="${id}"]`).parentElement;
+        const article = document.querySelector(`[data-id="${_id}"]`).parentElement;
         article.parentNode.removeChild(article);
     } else {
         console.log("Kunde inte radera CV-post.");
